@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ViTaSCOPE: Visuo-tactile Implicit Representation for In-hand Pose and Extrinsic Contact Estimation.">
+  <meta name="keywords" content="Robotics, Visuo-tactile Sensing, Extrinsic Contact Estimation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ViTaSCOPE: Visuo-tactile Implicit Representation for In-hand Pose and Extrinsic Contact Estimation</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📽️</text></svg>">
+
+  
+  <style>
+    /* Only hide videos with the "toggle-video" class */
+    video.toggle-video {
+      width: 100%;
+      height: auto;
+      display: none;
+    }
+    .center-container {
+      width: 100%;
+      text-align: center; /* Centers inline elements within this container */
+      margin-top: 50px; /* Optional: Adds space from the top */
+    }
+    /* Optional styling for the select element */
+    .center-container select {
+      font-size: 16px;
+      padding: 8px;
+    }
+    /* Style the select element (acting as a button) */
+    #videoSelect {
+      border: 2px solid black;
+      background-color: black; /* sets the background color */
+      text-align: center;
+      color: white; /* sets the text color */
+      width: 190px;         /* adjust width as needed */
+      height: 40px;         /* adjust height as needed */
+      padding: 5px;         /* optional: adjust padding for better appearance */
+    }
+  </style>
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/stanford_icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body style="background-color: black;">
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu" style="background-color: black;">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://jayjunlee.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero" >
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="color: white;">📽️ ViTaSCOPE: Visuo-tactile Implicit Representation for In-hand Pose and Extrinsic Contact Estimation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block" style="color: white;">
+              <a href="https://jayjunlee.github.io/">Jayjun Lee</a>,</span>
+            <span class="author-block" style="color: white;">
+              <a href="https://www.mmintlab.com/people/nima-fazeli/">Nima Fazeli</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block" style="color: white;">University of Michigan</span>
+            <br>
+            <span class="author-block" style="color: white;">RSS 2025</span>
+          </div>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/MMintLab/vitascope"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaser" src="./static/images/teaser.jpeg" alt="ViTaSCOPE Architecture">
+      
+      <h2 class="subtitle has-text-centered" style="color: white;">
+        ViTaSCOPE is a neural implicit representation that can integrate visuo-tactile sensing for in-hand pose and extrinsic contact estimation.
+      </h2>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="color: white;">Acknowledgement</h2>
+
+        <p style="color: white;">
+
+        </p>
+
+        <br/>
+
+        <p style="color: white;">
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="team">
+  <div class="container is-max-desktop content">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="color: white;">Team</h2>
+
+        <div class="container has-text-centered">
+          <div class="publication-authors is-flex justify-content is-justify-content-space-around is-hidden-mobile">
+            <div class="author-block has-text-centered has-addons-centered">
+              <figure class="image is-128x128">
+                <a href="https://jayjunlee.github.io/">
+                  <img class="is-rounded" src="./static/images/jayjun.jpg" alt="Jayjun Lee">
+                </a>
+              </figure>
+              <a href="https://jayjunlee.github.io/">Jayjun Lee</a>
+            </div>
+
+            <div class="author-block has-text-centered has-addons-centered">
+              <figure class="image is-128x128">
+                <a href="https://www.mmintlab.com/people/nima-fazeli/">
+                  <img class="is-rounded
+                          " src="./static/images/nima.png" alt="Nima Fazeli">
+                </a>
+              </figure>
+              <a href="https://www.mmintlab.com/people/nima-fazeli/">Nima Fazeli</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title" style="color: white;">BibTeX</h2>
+    <pre class="is-hidden-mobile" style="background-color: black; color: white; border: 2px solid gray;"><code>
+      @article{lee2025vitascope,
+        author    = {Jayjun Lee and Nima Fazeli},
+        title     = {ViTaSCOPE: Visuo-tactile Implicit Representation for In-hand Pose and Extrinsic Contact Estimation},
+        booktitle = {Proceedings of Robotics: Science and Systems (RSS)},
+        year      = {2025},
+        address   = {Los Angeles, CA},
+        doi       = {10.15607/RSS.2025.X},
+      }
+    </code>
+    </pre>
+  </div>
+</section>
+
+
+<footer class="footer" style="background-color: darkgray;">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/MMintLab/vitascope" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template modified from <a href="https://nerfies.github.io/">NeRFies</a>.
+          </p>
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
