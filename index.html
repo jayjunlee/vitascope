@@ -42,17 +42,13 @@
 
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FGVGFCGM0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
+  
+    gtag('config', 'G-5FGVGFCGM0');
   </script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
@@ -65,7 +61,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/stanford_icon.png">
+  <link rel="icon" href="./static/images/vitascope_icon.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -95,7 +91,7 @@
   </div>
 </nav>
 
-
+<!-- Title, Authors, Links -->
 <section class="hero" >
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -150,9 +146,7 @@
                   <span>Code (Coming Soon)</span>
                   </a>
               </span>
-              
             </div>
-
           </div>
         </div>
       </div>
@@ -160,42 +154,105 @@
   </div>
 </section>
 
+<!-- Teaser Video and TLDR -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img id="teaser" src="./static/images/teaser.jpeg" alt="ViTaSCOPE Architecture">
-      
+      <img id="teaser" src="./static/videos/teaser.mp4" alt="ViTaSCOPE Architecture">
       <h2 class="subtitle has-text-centered" style="color: white;">
-        ViTaSCOPE is a neural implicit representation that can integrate visuo-tactile sensing for in-hand pose and extrinsic contact estimation.
+        ViTaSCOPE is a neural implicit representation that is trained entirely in simulation to integrate vision and touch for in-hand object pose and extrinsic contact estimation.
       </h2>
-
     </div>
   </div>
 </section>
 
-
-
-
-
-
-
-
-
-
+<!-- Model Architecture; Object, Tactile, Contact Modules -->
 <section class="section">
   <div class="container is-max-desktop">
-
-
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3" style="color: white;">Acknowledgement</h2>
+
+        <h2 class="title is-3" style="color: white; text-align: center;">ViTaSCOPE</h2>
+
+        <h2 class="subtitle has-text-centered" style="color: white;">
+          How do we leverage <u>complementary visuo-tactile feedback</u> to infer extrinsic contact between grasped object and the environment?
+        </h2>
 
         <p style="color: white;">
-
+          <b>Object module (O)</b>: A <u>signed distance field (SDF)</u> that represents the 3D object geometry.
         </p>
 
-        <br/>
 
+        <p style="color: white;">
+          <b>Tactile module (T)</b>: A <u>shear vector field</u> that characterizes the extrinsic contact configuration.
+        </p>
+
+        <p style="color: white;">
+          <b>Contact module (C)</b>: A <u>contact field</u> that represents the contact probability across the object surface.
+        </p>
+
+        <div class="content has-text-centered">
+          <img src="./static/images/model_architecture.jpeg" alt="ViTaSCOPE Architecture" style="width: 80%; height: 100%;">
+        </div>
+
+        <div class="content has-text-justified">
+          <div class="content has-text-centered">
+            <h2 class="subtitle has-text-centered" style="color: white;">
+              Tactile module (T)
+            </h2>
+            <img src="./static/images/tactile_module.jpeg" alt="Tactile Module" style="width: 60%; height: 60%;">
+          </div>
+        </div>
+        <br/>
+      </div>
+    </div>
+
+
+    <!-- Scaling up Visuo-Tactile Data in Simulation -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="color: white; text-align: center;">Scaling up Visuo-Tactile Data in Simulation</h2>
+        <div class="content has-text-justified">
+          <p style="color: white;">
+            We scale up visuo-tactile robot interaction data in simulation using the penalty-based tactile model using Nvidia's TacSL framework in Isaac Gym.
+          </p>
+        </div>
+        <img id="simulation" src="./static/videos/simulation.mp4" alt="ViTaSCOPE TacSL">
+      </div>
+    </div>
+
+    <!-- Zero-shot Sim-to-Real Transfer Results -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="color: white; text-align: center;">Zero-shot Sim-to-Real Transfer Results</h2>
+        <div class="content has-text-justified">
+          <p style="color: white;">
+            We zero-shot sim-to-real transfer ViTaSCOPE to the real world and present some results below. (<span style="color: red;">predicted</span>, <span style="color: rgb(22, 56, 207);">ground truth</span>)
+          </p>
+        </div>
+        <img id="results" src="./static/videos/real_world_results.mp4" alt="ViTaSCOPE Results">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Acknowledgement -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="color: white; text-align: center;">Acknowledgement</h2>
+        <p style="color: white;">
+          The authors would like to thank Andrea Sipos for manufacturing the Gelslim 4.0 vision-based tactile sensors for the Franka Emika Panda robot arm. 
+          We also thank William van den Bogert for his help with tracking marker displacements from Gelslim 4.0 to extract shear observations. 
+          We are grateful to Mark van der Merwe, Youngsun Wi, Miquel Oller, and Samanta Rodriguez for helpful discussions and important feedbacks.
+          Finally, we would like to thank the authors of the TacSL paper [1] and NVIDIA for open-sourcing the framework and Isaac Gym for simulation.
+        </p>
+        <br/>
+        <p style="color: white;">
+          [1] TacSL: A Library for Visuotactile Sensor Simulation and Learning
+        </p>
         <p style="color: white;">
         </p>
       </div>
@@ -203,14 +260,13 @@
   </div>
 </section>
 
-
-
+<!-- Authors -->
 <section class="section" id="team">
   <div class="container is-max-desktop content">
 
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3" style="color: white;">Team</h2>
+        <h2 class="title is-3" style="color: white; text-align: center;">Team</h2>
 
         <div class="container has-text-centered">
           <div class="publication-authors is-flex justify-content is-justify-content-space-around is-hidden-mobile">
@@ -239,9 +295,10 @@
   </div>
 </section>
 
+<!-- BibTeX -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h2 class="title" style="color: white;">BibTeX</h2>
+    <h2 class="title" style="color: white; text-align: center;">BibTeX</h2>
     <pre class="is-hidden-mobile" style="background-color: black; color: white; border: 2px solid gray;"><code>
       @inproceedings{vitascope2025,
         title={ViTaSCOPE: Visuo-tactile Implicit Representation for In-hand Pose and Extrinsic Contact Estimation},
@@ -254,7 +311,7 @@
   </div>
 </section>
 
-
+<!-- Footer -->
 <footer class="footer" style="background-color: darkgray;">
   <div class="container">
     <div class="content has-text-centered">
