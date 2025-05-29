@@ -59,7 +59,8 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/vitascope_favicon.png" type="image/png">
+  <!-- <link rel="icon" href="./static/images/vitascope_favicon.png" type="image/png"> -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%200%20100%20100%22><text y=%22.9em%22 font-size=%2290%22>📽️</text></svg>">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -156,7 +157,10 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img id="teaser" src="./static/videos/teaser.mp4" alt="ViTaSCOPE Architecture">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
       <h2 class="subtitle has-text-centered" style="color: white;">
         ViTaSCOPE is a neural implicit representation that is trained entirely in simulation to integrate vision and touch for in-hand object pose and extrinsic contact estimation.
       </h2>
@@ -215,7 +219,10 @@
             We scale up visuo-tactile robot interaction data in simulation using the penalty-based tactile model using Nvidia's TacSL framework in Isaac Gym.
           </p>
         </div>
-        <img id="simulation" src="./static/videos/simulation.mp4" alt="ViTaSCOPE TacSL">
+        <video id="simulation" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/simulation.mp4"
+                  type="video/mp4">
+        </video>
       </div>
     </div>
 
@@ -228,7 +235,10 @@
             We zero-shot sim-to-real transfer ViTaSCOPE to the real world and present some results below. (<span style="color: red;">predicted</span>, <span style="color: rgb(22, 56, 207);">ground truth</span>)
           </p>
         </div>
-        <img id="results" src="./static/videos/real_world_results.mp4" alt="ViTaSCOPE Results">
+        <video id="results" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/real_world_results.mp4"
+                  type="video/mp4">
+        </video>
       </div>
     </div>
 
